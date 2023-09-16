@@ -25,6 +25,32 @@ const config: Config = {
         xl: "1280px",
         "2xl": "1536px",
       },
+      fontSize: {
+        xl: [
+          " 1.25rem",
+          {
+            lineHeight: "20px",
+            letterSpacing: "-0.312px",
+            fontWeight: "300",
+          },
+        ],
+        "2xl": [
+          "1.5rem",
+          {
+            lineHeight: "2rem",
+            letterSpacing: "-0.01em",
+            fontWeight: "500",
+          },
+        ],
+        "3xl": [
+          "1.875rem",
+          {
+            lineHeight: "2.25rem",
+            letterSpacing: "-0.02em",
+            fontWeight: "700",
+          },
+        ],
+      },
     },
   },
   plugins: [],
