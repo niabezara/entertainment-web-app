@@ -9,12 +9,12 @@ export default function RecomendedMovies() {
         {MovieData.map((movies) =>
           movies.isTrending ? null : (
             <div
-              className="rounded-lg w-custom h-28 p-3"
+              className="rounded-lg w-32 h-28 p-3"
               style={{
                 backgroundImage: `url(${movies.thumbnail.regular.small})`,
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "100% 100%",
-                width: "47%",
+                // width: "47%",
               }}
             >
               <p>{movies.title}</p>
