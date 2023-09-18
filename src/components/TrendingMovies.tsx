@@ -34,6 +34,9 @@ export default function TrendingMovies() {
                     borderRadius: "8px",
                   }}
                 >
+                  <div className="w-8 h-8 rounded-full bg-gray-400 bg-opacity-50 flex items-center justify-center absolute right-1">
+                    <img src="/images/icon-bookmark-empty.svg" alt="" />
+                  </div>
                   <div className="absolute bottom-7 flex text-white items-center space-x-1 ">
                     <p className="text-sm font-light">{movie.year}</p>
                     <div className="bg-white rounded-full w-0.5 h-0.5"></div>
