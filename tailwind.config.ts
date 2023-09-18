@@ -20,6 +20,7 @@ const config: Config = {
         customDarkBlue: "var(--Dark-Blue, #10141E)",
       },
       screens: {
+        xs: "360px",
         sm: "600px",
         md: "768px",
         xl: "1280px",
