@@ -5,3 +5,7 @@
 body {
   @apply bg-customDarkBlue;
 }
+
+.logo-img:hover path {
+  fill: aliceblue;
+}

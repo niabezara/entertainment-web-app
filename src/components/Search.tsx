@@ -1,17 +1,29 @@
 "use client";
-import React, { useState } from "react";
+import router, { useRouter } from "next/navigation";
+import React, {
+  startTransition,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+  useTransition,
+} from "react";
+import { useDebounce } from "use-debounce";
+
+interface Props {
+  inputValue: string;
+  setInputValue: (value: string) => void;
+  isHandling?: boolean;
+}
 
 export default function Search() {
-  const [value, setValue] = useState("");
-
   return (
     <div className="flex p-4 bg-transparent gap-4">
       <img src="/images/icon-search.svg" alt="" />
       <input
+        className="bg-transparent w-full text-white"
         type="text"
-        onChange={(e) => setValue(e.target.value)}
         placeholder="Search for movies or TV series"
-        className="bg-transparent w-full"
       />
     </div>
   );
