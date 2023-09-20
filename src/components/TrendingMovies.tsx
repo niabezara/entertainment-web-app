@@ -19,15 +19,15 @@ export default function TrendingMovies() {
         <motion.div
           drag="x"
           dragConstraints={{ right: 0, left: -width }}
-          className="caruselinner flex gap-4"
+          className="caruselinner flex gap-4 "
         >
           {MovieData.map((movie, index) => (
             <motion.div key={index}>
               {movie.isTrending ? (
                 <div
-                  className="w-60 h-40 p-4 relative"
+                  className="w-60 h-40 p-4 relative sm:w-96"
                   style={{
-                    backgroundImage: `url(${movie.thumbnail.trending?.small})`,
+                    backgroundImage: `url(${movie.thumbnail.trending?.large})`,
                     backgroundRepeat: "no-repeat",
                     pointerEvents: "none",
                     backgroundSize: "100% 100%",
