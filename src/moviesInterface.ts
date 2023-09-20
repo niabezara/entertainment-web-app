@@ -6,7 +6,7 @@ interface Thumbnail {
 interface Movie {
   title: string;
   thumbnail: {
-    trending: Thumbnail;
+    trending?: Thumbnail;
     regular: {
       small: string;
       medium: string;

@@ -8,7 +8,9 @@ import MovieData from "../data/data.json";
 export default async function Home() {
   return (
     <>
-      <NavBar />
+      <div className="sm:m-4">
+        <NavBar />
+      </div>
       <Search />
       <DashBoard />
     </>
