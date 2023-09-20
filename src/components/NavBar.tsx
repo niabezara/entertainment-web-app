@@ -1,11 +1,16 @@
 import Link from "next/link";
 import React from "react";
 
-export default function NavBar() {
+export default function NavBar({ onLogoClick }: { onLogoClick: () => void }) {
   return (
     <div className="flex justify-between items-center p-4  bg-primary-SemiDarkBlue sm:rounded-lg">
       <Link href="/">
-        <img src="/images/logo.svg" alt="" className="w-6 sm:w-8" />
+        <img
+          src="/images/logo.svg"
+          alt=""
+          className="w-6 sm:w-8"
+          onClick={onLogoClick}
+        />
       </Link>
       <div className="flex space-x-4 items-center sm:space-x-6">
         <Link href="/">

@@ -1,23 +1,11 @@
-"use client";
 import React, { useState } from "react";
-import Movies from "../data/data.json";
 import Movie from "../moviesInterface";
 
-export default function Search() {
-  const [activeSearch, setActiveSearch] = useState<Movie[]>([]);
-
-  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const searchTerm = e.target.value.toLowerCase();
-    if (searchTerm === "") {
-      setActiveSearch([]);
-      return;
-    }
-    const filteredMovies = Movies.filter((movie) =>
-      movie.title.toLowerCase().includes(searchTerm)
-    ).slice(0, 8);
-
-    setActiveSearch(filteredMovies);
-  };
+export default function Search({
+  handleSearch,
+  activeSearch,
+  SetActiveSearch,
+}: any) {
   return (
     <div>
       <div className="flex p-4 bg-transparent gap-4">
@@ -29,14 +17,6 @@ export default function Search() {
           onChange={handleSearch}
         />
       </div>
-      {activeSearch.length > 0 && (
-        <div>
-          {" "}
-          {activeSearch.map((movie) => (
-            <div>{movie.title}</div>
-          ))}{" "}
-        </div>
-      )}
     </div>
   );
 }
