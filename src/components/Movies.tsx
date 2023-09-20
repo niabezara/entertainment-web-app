@@ -11,7 +11,7 @@ export default function Movies() {
               <div
                 className="rounded-lg w-full h-28 xs:h-28 p-3  relative "
                 style={{
-                  backgroundImage: `url(${movies.thumbnail.regular.small})`,
+                  backgroundImage: `url(${movies.thumbnail.regular.large})`,
                   backgroundRepeat: "no-repeat",
                   backgroundSize: "cover",
                 }}
