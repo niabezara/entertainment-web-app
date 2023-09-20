@@ -24,16 +24,8 @@ export default function Home() {
     setActiveSearch(filteredMovies);
   };
 
-  const handleLogoClick = () => {
-    // Reset the state values to default or initial values
-    window.location.reload();
-  };
-
   return (
     <>
-      <div className="sm:m-4">
-        <NavBar onLogoClick={handleLogoClick} />
-      </div>
       <Search
         activeSearch={activeSearch}
         setActiveSearch={setActiveSearch}
