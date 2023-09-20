@@ -21,10 +21,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}>
-        <div className="sm:m-4">
-          <NavBar />
+        <div className="xl:flex xl:m-9">
+          <div className="flex">
+            <NavBar />
+          </div>
+          <div>{children}</div>
         </div>
-        {children}
       </body>
     </html>
   );

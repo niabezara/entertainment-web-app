@@ -24,7 +24,7 @@ const config: Config = {
         m: "400px",
         sm: "600px",
         md: "768px",
-        xl: "1280px",
+        xl: "900px",
         "2xl": "1536px",
       },
       fontSize: {

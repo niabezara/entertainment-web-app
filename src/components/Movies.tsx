@@ -3,8 +3,8 @@ import MovieData from "../data/data.json";
 
 export default function Movies() {
   return (
-    <div className="flex flex-col gap-12 w-full max-w-screen-lg mt-6">
-      <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-5 gap-y-8 ">
+    <div className="flex flex-col gap-12 w-full max-w-screen-lg mt-6 hover:cursor-pointer ">
+      <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-5 gap-y-8 xl:grid-cols-4 ">
         {MovieData.map((movies, index) =>
           movies.isTrending ? null : (
             <div key={index} className="flex flex-col ">
@@ -20,6 +20,7 @@ export default function Movies() {
                   <img src="/images/icon-bookmark-empty.svg" alt="" />
                 </div>
               </div>
+
               <div className=" flex text-gray-400 items-center space-x-1 mt-2">
                 <p className="text-sm font-light">{movies.year}</p>
                 <div className="bg-white rounded-full w-0.5 h-0.5 "></div>

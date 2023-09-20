@@ -8,4 +8,5 @@ body {
 
 .logo-img:hover path {
   fill: aliceblue;
+  cursor: pointer;
 }

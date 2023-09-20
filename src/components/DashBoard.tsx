@@ -10,13 +10,13 @@ export default function DashBoard({
   searchTerm,
 }: any) {
   return (
-    <div className="max-w-screen-lg ">
+    <div className="max-w-screen-lg xl:mx-auto">
       {activeSearch.length > 0 ? (
         <div className="flex flex-col gap-12 m-6 ">
           <h1 className="text-white font-light text-xl ">
             Found {activeSearch.length} results for {searchTerm}
           </h1>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-5 gap-y-8 ">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-5 gap-y-8 xl:grid-cols-4 ">
             {activeSearch.map((movie: any, index: any) => (
               <div key={index} className="flex flex-col ">
                 <div
