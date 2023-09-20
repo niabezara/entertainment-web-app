@@ -21,11 +21,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}>
-        <div className="xl:flex  max-w-7xl xl:m-auto xl:gap-4 ">
-          <div className="flex xl:mt-9">
-            <NavBar />
+        <div className="xl:flex max-w-5xl xl:m-auto xl:gap-4 xl:overflow-hidden ">
+          <div className="xl:w-full xl:flex ">
+            <div className="flex xl:mt-9">
+              <NavBar />
+            </div>
+            <div className="xl:w-11/12">{children}</div>
           </div>
-          {children}
         </div>
       </body>
     </html>

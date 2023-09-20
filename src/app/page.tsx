@@ -25,7 +25,7 @@ export default function Home() {
   };
 
   return (
-    <div className="xl:mt-9">
+    <div className="xl:mt-9 max-w-5xl">
       <Search
         activeSearch={activeSearch}
         setActiveSearch={setActiveSearch}
