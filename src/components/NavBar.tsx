@@ -3,7 +3,7 @@ import React from "react";
 
 export default function NavBar() {
   return (
-    <div className="flex justify-between w-full items-center p-4  bg-primary-SemiDarkBlue sm:rounded-lg xl:flex-col xl:justify-between xl:h-1/3">
+    <div className="flex justify-between w-full items-center p-4  bg-primary-SemiDarkBlue sm:rounded-lg xl:flex-col xl:justify-between xl:h-1/3 xl:w-24 xl:rounded-3xl">
       <Link href="/">
         <img
           src="/images/logo.svg"
@@ -11,7 +11,7 @@ export default function NavBar() {
           className="w-6 sm:w-8 hover:cursor-pointer"
         />
       </Link>
-      <div className="flex space-x-4 items-center sm:space-x-6 xl:flex-col xl:justify-between">
+      <div className="flex space-x-4 items-center sm:space-x-6 xl:flex-col xl:justify-between xl:items-center xl:space-y-6 xl:space-x-0">
         <Link href="/">
           <svg
             className="logo-img"

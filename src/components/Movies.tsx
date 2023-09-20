@@ -3,7 +3,7 @@ import MovieData from "../data/data.json";
 
 export default function Movies() {
   return (
-    <div className="flex flex-col gap-12 w-full max-w-screen-lg mt-6 hover:cursor-pointer ">
+    <div className="flex flex-col gap-12 w-full max-w-7xl mt-6 hover:cursor-pointer xl:mx-auto">
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-5 gap-y-8 xl:grid-cols-4 ">
         {MovieData.map((movies, index) =>
           movies.isTrending ? null : (

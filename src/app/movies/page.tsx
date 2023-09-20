@@ -5,11 +5,9 @@ import React from "react";
 
 export default function page() {
   return (
-    <div>
-      <div className="m-4">
-        <h1 className="text-white font-light text-xl">Movies</h1>
-        <Movies />
-      </div>
+    <div className="m-4 xl:w-full xl:m-9">
+      <h1 className="text-white font-light text-xl">Movies</h1>
+      <Movies />
     </div>
   );
 }

@@ -10,7 +10,7 @@ export default function DashBoard({
   searchTerm,
 }: any) {
   return (
-    <div className="max-w-screen-lg xl:mx-auto">
+    <div className="max-w-7xl xl:mx-auto">
       {activeSearch.length > 0 ? (
         <div className="flex flex-col gap-12 m-6 ">
           <h1 className="text-white font-light text-xl ">
@@ -20,7 +20,7 @@ export default function DashBoard({
             {activeSearch.map((movie: any, index: any) => (
               <div key={index} className="flex flex-col ">
                 <div
-                  className="rounded-lg w-full h-28 xs:h-28 p-3  relative "
+                  className="rounded-lg w-full h-28 xs:h-28 p-3  relative  "
                   style={{
                     backgroundImage: `url(${movie.thumbnail.regular.large})`,
                     backgroundRepeat: "no-repeat",
@@ -53,7 +53,7 @@ export default function DashBoard({
         <div className="w-full">
           <TrendingMovies />
           <div className="m-4">
-            <h1 className="text-white font-light text-xl">
+            <h1 className="text-white font-light text-xl xl:text-2xl">
               Recommended for you
             </h1>
             <Movies />

@@ -14,7 +14,7 @@ export default function TrendingMovies() {
 
   return (
     <div className="m-0 ml-4">
-      <h1 className="text-white font-light text-xl ">Trending</h1>
+      <h1 className="text-white font-light text-xl xl:text-2xl ">Trending</h1>
       <motion.div ref={carousel} className="cursor-grab overflow-hidden mt-4">
         <motion.div
           drag="x"

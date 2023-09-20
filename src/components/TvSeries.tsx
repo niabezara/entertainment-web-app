@@ -5,7 +5,7 @@ export default function TvSeries() {
   return (
     <div className="m-4 hover:cursor-pointer">
       <h1 className="text-white font-light text-xl">TV Series</h1>
-      <div className="flex flex-col gap-12 w-full max-w-screen-lg mt-6">
+      <div className="flex flex-col gap-12 w-full max-w-7xl mt-6">
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-5 gap-y-8 xl:grid-cols-4 ">
           {Series.map((serie) =>
             serie.category == "TV Series" ? (

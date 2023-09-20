@@ -5,7 +5,7 @@ import React from "react";
 
 export default function page() {
   return (
-    <div>
+    <div className="m-4 xl:w-full xl:m-9">
       <TvSeries />
     </div>
   );

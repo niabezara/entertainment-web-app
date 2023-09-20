@@ -25,7 +25,7 @@ export default function Home() {
   };
 
   return (
-    <>
+    <div className="xl:mt-9">
       <Search
         activeSearch={activeSearch}
         setActiveSearch={setActiveSearch}
@@ -38,6 +38,6 @@ export default function Home() {
         searchTerm={searchTerm}
         setSearchTerm={setSearchTerm}
       />
-    </>
+    </div>
   );
 }
