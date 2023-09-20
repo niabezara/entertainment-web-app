@@ -3,7 +3,7 @@ import React from "react";
 
 export default function NavBar() {
   return (
-    <div className="flex justify-between w-full items-center p-4  bg-primary-SemiDarkBlue sm:rounded-lg xl:flex-col xl:justify-between xl:h-96 xl:w-24 xl:rounded-3xl">
+    <div className="flex justify-between w-full items-center p-4  bg-primary-SemiDarkBlue sm:rounded-lg xl:flex-col xl:justify-between xl:h-[32rem] xl:w-24 xl:rounded-3xl">
       <Link href="/">
         <img
           src="/images/logo.svg"
