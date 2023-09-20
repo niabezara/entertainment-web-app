@@ -10,7 +10,7 @@ export default function DashBoard({
   searchTerm,
 }: any) {
   return (
-    <div className=" xl:mx-auto xl:w-full">
+    <div className=" xl:mx-auto xl:w-11/12">
       {activeSearch.length > 0 ? (
         <div className="flex flex-col gap-12 m-6  xl:w-full">
           <h1 className="text-white font-light text-xl ">

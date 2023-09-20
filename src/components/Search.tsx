@@ -7,7 +7,7 @@ export default function Search({
   SetActiveSearch,
 }: any) {
   return (
-    <div>
+    <div className="xl:mx-auto xl:w-11/12">
       <div className="flex p-4 bg-transparent gap-4">
         <img src="/images/icon-search.svg" alt="" />
         <input
