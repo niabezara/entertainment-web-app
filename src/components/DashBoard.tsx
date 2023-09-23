@@ -1,23 +1,18 @@
-import React from "react";
+"use client";
 import TrendingMovies from "./TrendingMovies";
 import MovieData from "../data/data.json";
 import Movies from "./Movies";
 
-export default function DashBoard({
-  handleSearch,
-  activeSearch,
-  SetActiveSearch,
-  searchTerm,
-}: any) {
+export default function DashBoard({ movies, searchTerm }: any) {
   return (
     <div className=" xl:mx-auto xl:w-11/12">
-      {activeSearch.length > 0 ? (
+      {movies && movies.length > 0 ? (
         <div className="flex flex-col gap-12 m-6  xl:w-full">
           <h1 className="text-white font-light text-xl ">
-            Found {activeSearch.length} results for {searchTerm}
+            Found {movies.length} results for {searchTerm}
           </h1>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-5 gap-y-8 xl:grid-cols-4 ">
-            {activeSearch.map((movie: any, index: any) => (
+            {movies.map((movie: any, index: any) => (
               <div key={index} className="flex flex-col ">
                 <div
                   className="rounded-lg w-full h-28 xs:h-28 p-3  relative  "
