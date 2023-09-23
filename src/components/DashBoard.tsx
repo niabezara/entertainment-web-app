@@ -1,4 +1,3 @@
-"use client";
 import TrendingMovies from "./TrendingMovies";
 import MovieData from "../data/data.json";
 import Movies from "./AllMovies";
