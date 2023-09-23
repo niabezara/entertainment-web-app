@@ -1,5 +1,5 @@
 "use client";
-import Movies from "@/components/Movies";
+import FilteredMovies from "@/components/FilteredMovies";
 import Search from "@/components/Search";
 import React, { useState } from "react";
 import Movie from "@/moviesInterface";
@@ -22,10 +22,10 @@ export default function page() {
     setFilteredResults(filteredMovies);
   };
   return (
-    <div className="m-4 xl:w-11/12 xl:m-9">
-      <h1 className="text-white font-light text-xl">Movies</h1>
+    <div className="xl:mt-9 max-w-5xl ">
       <Search onFilter={handleFilter} />
-      <Movies movies={filteredResults} searchTerm={searchTerm} />
+
+      <FilteredMovies movies={filteredResults} searchTerm={searchTerm} />
     </div>
   );
 }
