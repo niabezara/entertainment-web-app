@@ -1,18 +1,19 @@
 import React from "react";
 import MovieData from "../data/data.json";
 import Movie from "@/moviesInterface";
-import Movies from "./AllMovies";
 
-export default function FilteredMovies({ movies, searchTerm }: any) {
+import TvSeries from "./TvSeries";
+
+export default function FilteredMovies({ Series, searchTerm }: any) {
   return (
     <div className=" xl:mx-auto xl:w-11/12">
-      {movies && movies.length > 0 ? (
+      {Series && Series.length > 0 ? (
         <div className="flex flex-col gap-12 m-6  xl:w-full">
           <h1 className="text-white font-light text-xl">
-            Found {movies.length} results for {searchTerm}
+            Found {Series.length} results for {searchTerm}
           </h1>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-5 gap-y-8 xl:grid-cols-4">
-            {movies.map((movie: Movie, index: number) => (
+            {Series.map((movie: Movie, index: number) => (
               <div key={index} className="flex flex-col">
                 <div
                   className="rounded-lg w-full h-28 xs:h-28 p-3  relative"
@@ -50,7 +51,7 @@ export default function FilteredMovies({ movies, searchTerm }: any) {
             <h1 className="text-white font-light text-xl xl:text-2xl">
               Movies
             </h1>
-            <Movies />
+            <TvSeries />
           </div>
         </div>
       )}

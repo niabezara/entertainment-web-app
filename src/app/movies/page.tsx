@@ -24,7 +24,6 @@ export default function page() {
   return (
     <div className="xl:mt-9 max-w-5xl ">
       <Search onFilter={handleFilter} />
-
       <FilteredMovies movies={filteredResults} searchTerm={searchTerm} />
     </div>
   );
