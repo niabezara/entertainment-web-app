@@ -6,7 +6,7 @@ import Movie from "@/moviesInterface";
 import AllMovies from "../../data/data.json";
 import FilteredSeries from "@/components/FilteredSeries";
 
-export default function page() {
+export default function TvSeries() {
   const [filteredResults, setFilteredResults] = useState<Movie[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
 
