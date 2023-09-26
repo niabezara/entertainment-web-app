@@ -10,3 +10,23 @@ body {
   fill: aliceblue;
   cursor: pointer;
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #10141e;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #242c41;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #fc4747;
+}
