@@ -4,7 +4,7 @@ import Movies from "./AllMovies";
 
 export default function DashBoard({ movies, searchTerm }: any) {
   return (
-    <div className=" xl:mx-auto xl:w-11/12">
+    <div className=" xl:mx-auto ">
       {movies && movies.length > 0 ? (
         <div className="flex flex-col gap-12 m-6  xl:w-full">
           <h1 className="text-white font-light text-xl ">

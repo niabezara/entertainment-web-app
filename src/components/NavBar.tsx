@@ -1,7 +1,9 @@
 import Link from "next/link";
 import React from "react";
+import AuthProviders from "./AuthProviders";
 
 export default function NavBar() {
+  const session = null;
   return (
     <div className="flex justify-between w-full items-center p-4  bg-primary-SemiDarkBlue sm:rounded-lg xl:flex-col xl:justify-between xl:h-[32rem] xl:w-24 xl:rounded-3xl">
       <Link href="/">
@@ -65,13 +67,7 @@ export default function NavBar() {
           </svg>
         </Link>
       </div>
-      <Link href={""}>
-        <img
-          src="/images/image-avatar.png"
-          alt=""
-          className="border border-white rounded-full w-6 sm:w-8"
-        />
-      </Link>
+      <div>{session ? <>usephoto</> : <AuthProviders />}</div>
     </div>
   );
 }

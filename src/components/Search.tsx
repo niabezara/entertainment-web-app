@@ -11,7 +11,7 @@ export default function Search({ onFilter }: any) {
   };
 
   return (
-    <div className="xl:mx-auto xl:w-11/12">
+    <div className="xl:mx-auto ">
       <div className="flex p-4 bg-transparent gap-4">
         <img src="/images/icon-search.svg" alt="" />
         <input

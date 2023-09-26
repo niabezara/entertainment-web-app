@@ -6,7 +6,7 @@ import TvSeries from "./TvSeries";
 
 export default function FilteredMovies({ Series, searchTerm }: any) {
   return (
-    <div className=" xl:mx-auto xl:w-11/12">
+    <div className=" xl:mx-auto ">
       {Series && Series.length > 0 ? (
         <div className="flex flex-col gap-12 m-6  xl:w-full">
           <h1 className="text-white font-light text-xl">
@@ -48,9 +48,9 @@ export default function FilteredMovies({ Series, searchTerm }: any) {
       ) : (
         <div className="w-full">
           <div className="m-4">
-            <h1 className="text-white font-light text-xl xl:text-2xl">
-              Movies
-            </h1>
+            {/* <h1 className="text-white font-light text-xl xl:text-2xl">
+              TV Series
+            </h1> */}
             <TvSeries />
           </div>
         </div>
