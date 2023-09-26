@@ -1,5 +1,4 @@
 import React from "react";
-import MovieData from "../data/data.json";
 import Movie from "@/moviesInterface";
 
 import TvSeries from "./TvSeries";

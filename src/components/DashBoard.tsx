@@ -1,5 +1,4 @@
 import TrendingMovies from "./TrendingMovies";
-import MovieData from "../data/data.json";
 import Movies from "./AllMovies";
 
 export default function DashBoard({ movies, searchTerm }: any) {

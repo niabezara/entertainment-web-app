@@ -1,7 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import Movies from "../data/data.json";
-import Movie from "../moviesInterface";
 
 export default function Search({ onFilter }: any) {
   const [searchQuery, setSearchQuery] = useState("");
