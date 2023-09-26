@@ -7,9 +7,9 @@ export default function TvSeries() {
       <h1 className="text-white font-light text-xl">TV Series</h1>
       <div className="flex flex-col gap-12 w-full max-w-7xl mt-6">
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-5 gap-y-8 xl:grid-cols-4 ">
-          {Series.map((serie) =>
+          {Series.map((serie, index) =>
             serie.category == "TV Series" ? (
-              <div className="flex flex-col">
+              <div key={index} className="flex flex-col">
                 <div className="group relative cursor-pointer items-center justify-center">
                   <div className="rounded-lg w-full h-full relative">
                     <img
