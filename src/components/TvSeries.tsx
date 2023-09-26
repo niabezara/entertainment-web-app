@@ -11,7 +11,7 @@ export default function TvSeries() {
             serie.category == "TV Series" ? (
               <div className="flex flex-col">
                 <div className="group relative cursor-pointer items-center justify-center">
-                  <div className="rounded-lg w-full h-full p-3  relative">
+                  <div className="rounded-lg w-full h-full relative">
                     <img
                       className="rounded-md"
                       src={serie.thumbnail.regular.large}

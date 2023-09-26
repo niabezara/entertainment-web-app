@@ -9,7 +9,7 @@ export default function AllMovies() {
           movies.isTrending ? null : (
             <div key={index} className="flex flex-col ">
               <div className="group relative cursor-pointer items-center justify-center">
-                <div className="rounded-lg w-full h-full p-3  relative">
+                <div className="rounded-lg w-full h-full relative">
                   <img
                     className="rounded-md"
                     src={movies.thumbnail.regular.large}

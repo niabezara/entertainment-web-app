@@ -14,16 +14,22 @@ export default function FilteredMovies({ movies, searchTerm }: any) {
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-5 gap-y-8 xl:grid-cols-4">
             {movies.map((movie: Movie, index: number) => (
               <div key={index} className="flex flex-col">
-                <div
-                  className="rounded-lg w-full h-28 xs:h-28 p-3  relative"
-                  style={{
-                    backgroundImage: `url(${movie.thumbnail.regular.large})`,
-                    backgroundRepeat: "no-repeat",
-                    backgroundSize: "cover",
-                  }}
-                >
-                  <div className="w-8 h-8 rounded-full bg-gray-400 bg-opacity-50 flex items-center justify-center absolute right-1">
-                    <img src="/images/icon-bookmark-empty.svg" alt="" />
+                <div className="group relative cursor-pointer items-center justify-center">
+                  <div className="rounded-lg w-full h-full relative">
+                    <img
+                      className="rounded-md"
+                      src={movie.thumbnail.regular.large}
+                      alt=""
+                    />
+                    <div className="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0 opacity-0 group-hover:opacity-100">
+                      <button className="rounded-full flex items-center p-1 gap-1 bg-gray-300 opacity-90 py-2 px-3.5 font-com text-sm capitalize text-white shadow ">
+                        <img src="/assets/icon-play.svg" alt="" />
+                        Play
+                      </button>
+                    </div>
+                    <div className="w-8 h-8 rounded-full bg-gray-400 bg-opacity-50 flex items-center justify-center absolute top-4 right-3">
+                      <img src="/images/icon-bookmark-empty.svg" alt="" />
+                    </div>
                   </div>
                 </div>
                 <div className="flex text-gray-400 items-center space-x-1 mt-2">

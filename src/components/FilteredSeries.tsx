@@ -16,7 +16,7 @@ export default function FilteredMovies({ Series, searchTerm }: any) {
             {Series.map((movie: Movie, index: number) => (
               <div key={index} className="flex flex-col">
                 <div
-                  className="rounded-lg w-full h-28 xs:h-28 p-3  relative"
+                  className="rounded-lg w-full h-28 xs:h-28   relative"
                   style={{
                     backgroundImage: `url(${movie.thumbnail.regular.large})`,
                     backgroundRepeat: "no-repeat",
