@@ -1,7 +1,7 @@
-import NavBar from "@/components/NavBar";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
+import { AuthProvider } from "./Providers";
 
 const font = Outfit({
   subsets: ["latin"],
@@ -21,14 +21,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}>
-        <div className="xl:flex max-w-5xl xl:m-auto xl:gap-4 xl:overflow-hidden ">
-          <div className="xl:w-full xl:flex ">
-            <div className="flex xl:mt-9">
-              <NavBar />
-            </div>
-            <div className="xl:w-11/12">{children}</div>
-          </div>
-        </div>
+        <AuthProvider>
+          <div>{children}</div>
+        </AuthProvider>
       </body>
     </html>
   );

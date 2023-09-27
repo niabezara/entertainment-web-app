@@ -1,11 +1,12 @@
 "use client";
-import NavBar from "@/components/NavBar";
+import DashBoard from "@/components/DashBoard";
 import Search from "@/components/Search";
-import React, { useState } from "react";
-import Movie from "@/moviesInterface";
-import AllMovies from "../../data/data.json";
+import { useState } from "react";
+import Movies from "../../data/data.json";
+import Movie from "../../moviesInterface";
+import NavBar from "@/components/NavBar";
 
-export default function Bookmarks() {
+export default function Dashboard() {
   const [filteredResults, setFilteredResults] = useState<Movie[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -15,7 +16,7 @@ export default function Bookmarks() {
       setFilteredResults([]);
       return;
     }
-    const filteredMovies = AllMovies.filter((movie) =>
+    const filteredMovies = Movies.filter((movie) =>
       movie.title.toLowerCase().includes(query)
     ).slice(0, 8);
 
@@ -30,6 +31,7 @@ export default function Bookmarks() {
         </div>
         <div className="xl:mt-9 max-w-5xl xl:w-11/12">
           <Search onFilter={handleFilter} />
+          <DashBoard movies={filteredResults} searchTerm={searchTerm} />
         </div>
       </div>
     </div>

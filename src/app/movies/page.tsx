@@ -4,6 +4,7 @@ import Search from "@/components/Search";
 import React, { useState } from "react";
 import Movie from "@/moviesInterface";
 import AllMovies from "../../data/data.json";
+import NavBar from "@/components/NavBar";
 
 export default function Movies() {
   const [filteredResults, setFilteredResults] = useState<Movie[]>([]);
@@ -22,9 +23,16 @@ export default function Movies() {
     setFilteredResults(filteredMovies);
   };
   return (
-    <div className="xl:mt-9 max-w-5xl ">
-      <Search onFilter={handleFilter} />
-      <FilteredMovies movies={filteredResults} searchTerm={searchTerm} />
+    <div className="xl:flex max-w-5xl xl:m-auto xl:gap-4 xl:overflow-hidden ">
+      <div className="xl:w-full xl:flex ">
+        <div className="flex xl:mt-9">
+          <NavBar />
+        </div>
+        <div className="xl:mt-9 max-w-5xl xl:w-11/12">
+          <Search onFilter={handleFilter} />
+          <FilteredMovies movies={filteredResults} searchTerm={searchTerm} />
+        </div>
+      </div>
     </div>
   );
 }

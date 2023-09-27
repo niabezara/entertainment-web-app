@@ -1,11 +1,32 @@
+"use client";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import AuthProviders from "./AuthProviders";
+import { useSession } from "next-auth/react";
+import { signOut } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 export default function NavBar() {
-  const session = null;
+  const [isEntryOpened, setIsEntryOpened] = useState<boolean>(false);
+  const router = useRouter();
+  const avatarClickHandler = () => {
+    setIsEntryOpened((prevState) => !prevState);
+  };
+
+  const { data: session } = useSession();
+  const handleSignOut = async () => {
+    try {
+      await signOut();
+    } catch (error) {
+      console.error("Sign-out error:", error);
+    }
+  };
+  const handleLoginClick = () => {
+    router.push("/");
+  };
+
   return (
-    <div className="flex justify-between w-full items-center p-4  bg-primary-SemiDarkBlue sm:rounded-lg xl:flex-col xl:justify-between xl:h-[32rem] xl:w-24 xl:rounded-3xl">
+    <div className="flex justify-between w-full items-center p-4 relative bg-primary-SemiDarkBlue sm:rounded-lg xl:flex-col xl:justify-between xl:h-[32rem] xl:w-24 xl:rounded-3xl">
       <Link href="/">
         <img
           src="/images/logo.svg"
@@ -67,7 +88,25 @@ export default function NavBar() {
           </svg>
         </Link>
       </div>
-      <div>{session ? <>usephoto</> : <AuthProviders />}</div>
+      <div
+        className="border-white rounded-full w-10 h-10"
+        onClick={avatarClickHandler}
+      >
+        <img src="/images/image-avatar.png" alt="" />
+      </div>
+      {isEntryOpened && (
+        <div
+          onClick={avatarClickHandler}
+          className="absolute w-60 bg-primary-SemiDarkBlue rounded-xl text-white bottom-[-6rem]  right-[0rem] p-6 flex flex-col gap-6 xl:right-[-16rem] xl:bottom-0 z-40"
+        >
+          <button
+            onClick={session ? handleSignOut : handleLoginClick}
+            className="w-full h-8 rounded-lg bg-red-500 text-white font-inherit text-base cursor-pointer transition-transform duration-300 ease-in border-none"
+          >
+            {session ? "Log Out" : "Log In"}
+          </button>
+        </div>
+      )}
     </div>
   );
 }
