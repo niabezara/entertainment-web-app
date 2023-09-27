@@ -5,9 +5,9 @@ export default function AllMovies() {
   return (
     <div className="flex flex-col gap-12 w-full max-w-5xl mt-6 hover:cursor-pointer xl:mx-auto ">
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-5 gap-y-8 xl:grid-cols-4 ">
-        {MovieData.map((movies, index) =>
+        {MovieData.map((movies) =>
           movies.isTrending ? null : (
-            <div key={index} className="flex flex-col ">
+            <div key={movies.title} className="flex flex-col ">
               <div className="group relative cursor-pointer items-center justify-center">
                 <div className="rounded-lg w-full h-full relative">
                   <img
