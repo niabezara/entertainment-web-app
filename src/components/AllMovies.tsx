@@ -1,9 +1,16 @@
 import { BookContext } from "@/app/context/BookContext";
 import React, { useContext } from "react";
 import MovieData from "../data/data.json";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 export default function AllMovies() {
   const { addToBook } = useContext(BookContext);
+  const { data: session } = useSession();
+  const router = useRouter();
+  const handleLoginClick = () => {
+    router.push("/");
+  };
 
   return (
     <div className="flex flex-col gap-12 w-full max-w-5xl mt-6 hover:cursor-pointer xl:mx-auto ">
@@ -27,13 +34,15 @@ export default function AllMovies() {
                   </div>
                   <div
                     onClick={() =>
-                      addToBook({
-                        title: movies.title,
-                        thumbnail: movies.thumbnail.regular.large,
-                        year: movies.year,
-                        category: movies.category,
-                        rating: movies.rating,
-                      })
+                      session
+                        ? addToBook({
+                            title: movies.title,
+                            thumbnail: movies.thumbnail.regular.large,
+                            year: movies.year,
+                            category: movies.category,
+                            rating: movies.rating,
+                          })
+                        : handleLoginClick()
                     }
                     className="w-8 h-8 rounded-full bg-gray-400 bg-opacity-50 flex items-center justify-center absolute top-4 right-3"
                   >
