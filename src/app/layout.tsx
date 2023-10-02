@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import { AuthProvider } from "./Providers";
+import { BookProvider } from "./context/BookContext";
 
 const font = Outfit({
   subsets: ["latin"],
@@ -21,9 +22,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}>
-        <AuthProvider>
-          <div>{children}</div>
-        </AuthProvider>
+        <BookProvider>
+          <AuthProvider>
+            <div>{children}</div>
+          </AuthProvider>
+        </BookProvider>
       </body>
     </html>
   );
