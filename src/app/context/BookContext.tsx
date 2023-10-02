@@ -1,5 +1,6 @@
 "use client";
-import React, { createContext, useState, ReactNode } from "react";
+
+import React, { createContext, useState, PropsWithChildren } from "react";
 
 interface Book {
   title: string;
@@ -7,21 +8,15 @@ interface Book {
 
 interface BookContextProps {
   items: Book[];
-  addToBook: (book: Book) => void;
+  addToBook: ({ title }: Book) => void;
 }
 
-const initialContext: BookContextProps = {
+export const BookContext = createContext<BookContextProps>({
   items: [],
   addToBook: () => {},
-};
+});
 
-const BookContext = createContext<BookContextProps>(initialContext);
-
-interface BookProviderProps {
-  children: ReactNode;
-}
-
-export function BookProvider({ children }: BookProviderProps) {
+export const BookProvider = ({ children }: PropsWithChildren) => {
   const [items, setItems] = useState<Book[]>([]);
 
   const addToBook = ({ title }: Book) => {
@@ -33,6 +28,4 @@ export function BookProvider({ children }: BookProviderProps) {
       {children}
     </BookContext.Provider>
   );
-}
-
-export default BookContext;
+};
