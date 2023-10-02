@@ -1,6 +1,6 @@
+import { BookContext } from "@/app/context/BookContext";
 import React, { useContext } from "react";
 import MovieData from "../data/data.json";
-import { BookContext } from "@/app/context/BookContext";
 
 export default function AllMovies() {
   const { addToBook } = useContext(BookContext);
@@ -18,6 +18,7 @@ export default function AllMovies() {
                     src={movies.thumbnail.regular.large}
                     alt=""
                   />
+
                   <div className="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0 opacity-0 group-hover:opacity-100">
                     <button className="rounded-full flex items-center p-1 gap-1 bg-gray-300 opacity-90 py-2 px-3.5 font-com text-sm capitalize text-white shadow ">
                       <img src="/assets/icon-play.svg" alt="" />
