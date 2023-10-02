@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import MovieData from "../data/data.json";
-import BookContext from "@/app/context/BookContext";
+import { BookContext } from "@/app/context/BookContext";
 
 export default function AllMovies() {
   const { addToBook } = useContext(BookContext);
@@ -28,6 +28,10 @@ export default function AllMovies() {
                     onClick={() =>
                       addToBook({
                         title: movies.title,
+                        thumbnail: movies.thumbnail.regular.large,
+                        year: movies.year,
+                        category: movies.category,
+                        rating: movies.rating,
                       })
                     }
                     className="w-8 h-8 rounded-full bg-gray-400 bg-opacity-50 flex items-center justify-center absolute top-4 right-3"
