@@ -44,17 +44,18 @@ export default function RegisterForm() {
         form.reset();
         router.push("/");
       } else {
-        console.log("failed");
+        const form = e.target;
+        form.reset();
       }
     } catch (error) {
-      console.log("errrorr", error);
+      console.log(error);
     }
   };
 
   return (
     <div className="flex flex-col justify-center h-screen items-center">
       <img src="/images/logo.svg" alt="" className="mb-16" />
-      <div className="shadow-lg p-8 rounded-3xl bg-primary-SemiDarkBlue">
+      <div className="shadow-lg p-8 rounded-3xl bg-primary-SemiDarkBlue md:w-96">
         <h1 className="text-xl text-white mb-9">Register</h1>
         <form
           action=""

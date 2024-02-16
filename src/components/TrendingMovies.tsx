@@ -1,7 +1,10 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import MovieData from "../data/data.json";
 import { motion } from "framer-motion";
+import { useSession } from "next-auth/react";
+import { BookContext } from "@/app/context/BookContext";
+import { useRouter } from "next/router";
 
 export default function TrendingMovies() {
   const [width, setWidth] = useState<number>(0);
@@ -11,6 +14,8 @@ export default function TrendingMovies() {
       setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
     }
   }, []);
+  const { items, addToBook, removeFromBook } = useContext(BookContext);
+  const { data: session } = useSession();
 
   return (
     <div className="m-0 ml-4">
@@ -37,8 +42,49 @@ export default function TrendingMovies() {
                         Play
                       </button>
                     </div>
-                    <div className="w-8 h-8 rounded-full bg-gray-400 bg-opacity-50 flex items-center justify-center absolute top-4 right-3">
-                      <img src="/images/icon-bookmark-empty.svg" alt="" />
+                    <div
+                      onClick={() => {
+                        try {
+                          if (session) {
+                            const movieToAdd = {
+                              title: movie.title,
+                              thumbnail: movie.thumbnail.regular.large,
+                              year: movie.year,
+                              category: movie.category,
+                              rating: movie.rating,
+                            };
+
+                            const isInBook = items.some(
+                              (bookedMovie) => bookedMovie.title === movie.title
+                            );
+
+                            if (isInBook) {
+                              // Remove the movie from the book
+                              removeFromBook(movie.title);
+                            } else {
+                              // Add the movie to the book
+                              addToBook(movieToAdd);
+                            }
+                          }
+                        } catch (error) {
+                          console.error(
+                            "Error handling movie bookmark:",
+                            error
+                          );
+                        }
+                      }}
+                      className="w-8 h-8 z-50 rounded-full bg-gray-400 bg-opacity-50 flex items-center justify-center absolute top-4 right-3"
+                    >
+                      <img
+                        src={
+                          items.some(
+                            (bookedMovie) => bookedMovie.title === movie.title
+                          )
+                            ? "/images/Path.png"
+                            : "/images/icon-bookmark-empty.svg"
+                        }
+                        alt=""
+                      />
                     </div>
                   </div>
                   <div className="absolute bottom-8 flex text-white items-center space-x-1 ">

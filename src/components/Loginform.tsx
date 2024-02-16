@@ -28,9 +28,9 @@ export default function LoginForm() {
     }
   };
   return (
-    <div className="flex flex-col justify-center h-screen items-center">
+    <div className="flex flex-col justify-center h-screen items-center ">
       <img src="/images/logo.svg" alt="" className="mb-16" />
-      <div className="shadow-lg p-8 rounded-3xl bg-primary-SemiDarkBlue ">
+      <div className="shadow-lg p-8 rounded-3xl bg-primary-SemiDarkBlue md:w-96">
         <h1 className="text-xl text-white mb-9">Login</h1>
         <form
           action=""

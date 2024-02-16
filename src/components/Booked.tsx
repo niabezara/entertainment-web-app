@@ -2,7 +2,7 @@ import { BookContext } from "@/app/context/BookContext";
 import React, { useContext } from "react";
 
 export default function Booked() {
-  const { items } = useContext(BookContext);
+  const { items, removeFromBook } = useContext(BookContext);
   return (
     <div className="flex flex-col gap-12 w-full max-w-5xl mt-6 hover:cursor-pointer xl:mx-auto ">
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-5 gap-y-8 xl:grid-cols-4 ">
@@ -17,8 +17,11 @@ export default function Booked() {
                     Play
                   </button>
                 </div>
-                <div className="w-8 h-8 rounded-full bg-gray-400 bg-opacity-50 flex items-center justify-center absolute top-4 right-3">
-                  <img src="/images/icon-bookmark-empty.svg" alt="" />
+                <div
+                  onClick={() => removeFromBook(item.title)}
+                  className="w-8 h-8 rounded-full bg-gray-400 bg-opacity-50 flex items-center justify-center absolute top-4 right-3"
+                >
+                  <img src="/images/Path.png" alt="" />
                 </div>
               </div>
             </div>

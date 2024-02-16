@@ -20,8 +20,8 @@ export default function DashBoard({ movies, searchTerm }: any) {
                     backgroundSize: "cover",
                   }}
                 >
-                  <div className="w-8 h-8 rounded-full bg-gray-400 bg-opacity-50 flex items-center justify-center absolute right-1">
-                    <img src="/images/icon-bookmark-empty.svg" alt="" />
+                  <div className="w-8 h-8 z-50 rounded-full bg-gray-400 bg-opacity-50 flex items-center justify-center absolute right-1">
+                    <img src={"/images/icon-bookmark-empty.svg"} alt="" />
                   </div>
                 </div>
                 <div className=" flex text-gray-400 items-center space-x-1 mt-2">

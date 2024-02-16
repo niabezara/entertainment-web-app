@@ -5,7 +5,7 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
 export default function AllMovies() {
-  const { addToBook } = useContext(BookContext);
+  const { items, addToBook, removeFromBook } = useContext(BookContext);
   const { data: session } = useSession();
   const router = useRouter();
   const handleLoginClick = () => {
@@ -26,27 +26,54 @@ export default function AllMovies() {
                     alt=""
                   />
 
-                  <div className="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0 opacity-0 group-hover:opacity-100">
+                  <div className="absolute z-10 inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0 opacity-0 group-hover:opacity-100">
                     <button className="rounded-full flex items-center p-1 gap-1 bg-gray-300 opacity-90 py-2 px-3.5 font-com text-sm capitalize text-white shadow ">
                       <img src="/assets/icon-play.svg" alt="" />
                       Play
                     </button>
                   </div>
                   <div
-                    onClick={() =>
-                      session
-                        ? addToBook({
+                    onClick={() => {
+                      try {
+                        if (session) {
+                          const movieToAdd = {
                             title: movies.title,
                             thumbnail: movies.thumbnail.regular.large,
                             year: movies.year,
                             category: movies.category,
                             rating: movies.rating,
-                          })
-                        : handleLoginClick()
-                    }
-                    className="w-8 h-8 rounded-full bg-gray-400 bg-opacity-50 flex items-center justify-center absolute top-4 right-3"
+                          };
+
+                          const isInBook = items.some(
+                            (bookedMovie) => bookedMovie.title === movies.title
+                          );
+
+                          if (isInBook) {
+                            // Remove the movie from the book
+                            removeFromBook(movies.title);
+                          } else {
+                            // Add the movie to the book
+                            addToBook(movieToAdd);
+                          }
+                        } else {
+                          handleLoginClick();
+                        }
+                      } catch (error) {
+                        console.error("Error handling movie bookmark:", error);
+                      }
+                    }}
+                    className="w-8 h-8 z-50 rounded-full bg-gray-400 bg-opacity-50 flex items-center justify-center absolute top-4 right-3"
                   >
-                    <img src="/images/icon-bookmark-empty.svg" alt="" />
+                    <img
+                      src={
+                        items.some(
+                          (bookedMovie) => bookedMovie.title === movies.title
+                        )
+                          ? "/images/Path.png"
+                          : "/images/icon-bookmark-empty.svg"
+                      }
+                      alt=""
+                    />
                   </div>
                 </div>
               </div>
