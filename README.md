@@ -1,34 +1,32 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+🎞️ Entertainment Web Page 🚀 🍿
 
-## Getting Started
+This project involves creating an entertainment web page for movies using Next.js and Tailwind CSS. The site will make use of a RESTful API to provide a diverse collection of movies and incorporate essential features such as user authentication, distinct pages, and movie saving capabilities. Through this project, I have enhanced my skills in Next.js, Tailwind CSS, and improved my proficiency in Next.js authentication and MongoDB integration. Users of the site will be able to browse movies, book them, log in, and log out.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+1. **User Authentication:**
+   - Users can create accounts and log in securely to access the site's features.
+   - Implementing Next.js authentication for enhanced security.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Movie Collection:**
+   - Utilizing a RESTful API to provide a wide range of movies for users to browse.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. **Distinct Pages:**
+   - Organizing the website with separate pages for different functionalities such as movie browsing, booking, and account management.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+4. **Movie Booking:**
+   - Users can select movies and book them for future viewing.
+   - Implementing features for users to manage their booked movies.
 
-## Learn More
+## Technologies Used
 
-To learn more about Next.js, take a look at the following resources:
+- **Next.js:** A React-based framework used for creating performant web applications.
+- **Tailwind CSS:** A utility-first CSS framework for designing modern and responsive web interfaces.
+- **MongoDB:** A popular NoSQL database used for storing and managing movie data and user information.
+- **RESTful API:** Utilized to fetch movie data and interact with the server.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
